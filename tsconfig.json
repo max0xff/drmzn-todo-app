@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["es6", "dom", "esnext", "es2017", "es2018", "webworker"],
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "module": "commonjs",
+    "allowJs": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "types": [
+      "node",
+      "webpack-env",
+      "jest"
+    ],
+    "moduleResolution": "node",
+    "noEmit": false
+  },
+    "awesomeTypescriptLoaderOptions": {
+      "useCache": true,
+      "useBabel": false,
+      "isolatedModules": false,
+      "forceIsolatedModules": false,
+      "reportFiles": [
+        "src/**/*.ts"
+      ]
+  },
+  "strict-boolean-expressions": true,
+  "include": [
+    "src/"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    "server",
+    "sessions",
+    "tests-ui",
+    "tests"
+  ],
+  "paths": {
+    "src": "src/"
+  }
+}

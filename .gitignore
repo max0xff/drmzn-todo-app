@@ -1,0 +1,10 @@
+.awcache
+.vscode
+node_modules
+public/css/main.min.css
+public/js
+server/src
+sessions
+package-lock.json
+yarn.lock
+public/sw.*

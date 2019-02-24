@@ -1,0 +1,8 @@
+<li id="todoid-{{ id }}" data-id="{{ id }}" class="{{#isCompleted}}completed{{/isCompleted}} {{#isEditing}}editing{{/isEditing}}">
+    <div class="view">
+        <input class="toggle" type="checkbox" {{#isCompleted}}checked{{/isCompleted}}>
+        <label>{{ text }}</label>
+        <button class="destroy"></button>
+    </div>
+    <input type="text" class="edit" value="{{ text }}" data-text="{{ text }}">
+</li>

@@ -1,0 +1,11 @@
+<section class="main">
+    <input id="toggle-all" class="toggle-all" type="checkbox" {{#Main.todo.options.isAllComplete}}checked{{/Main.todo.options.isAllComplete}}>
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list">
+        {{#Main.todo.data}}
+        {{#isVisible}}
+            {{>todo}}
+        {{/isVisible}}
+        {{/Main.todo.data}}
+    </ul>
+</section>

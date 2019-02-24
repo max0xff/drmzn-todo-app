@@ -1,0 +1,17 @@
+<footer class="footer">
+    <span class="todo-count"><strong>{{ Main.todo.options.countNotComplete }}</strong> item{{^Main.todo.options.isOneCount}}s{{/Main.todo.options.isOneCount}} left</span>
+    <ul class="filters">
+        <li>
+            <a {{#Main.todo.options.filter.all}}class="selected"{{/Main.todo.options.filter.all}} href="#/">All</a>
+        </li>
+        <li>
+            <a {{#Main.todo.options.filter.active}}class="selected"{{/Main.todo.options.filter.active}} href="#/active">Active</a>
+        </li>
+        <li>
+            <a {{#Main.todo.options.filter.completed}}class="selected"{{/Main.todo.options.filter.completed}} href="#/completed">Completed</a>
+        </li>
+    </ul>
+    {{#Main.todo.options.hasCompleted}}
+    <button class="clear-completed">Clear completed</button>
+    {{/Main.todo.options.hasCompleted}}
+</footer>
