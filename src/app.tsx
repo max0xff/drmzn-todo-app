@@ -1,6 +1,7 @@
 import 'src/styles/default.scss';
 import 'src/config/events';
 
+import { runSagas } from 'src/config/sagas';
 import { store } from 'src/config/store';
 
 // react
@@ -14,6 +15,9 @@ import App from 'src/components/root';
 
 (() => {
   console.log('client document loaded...');
+
+  // start saga engine
+  runSagas();
 
   // react render
   views(store, App).render();
