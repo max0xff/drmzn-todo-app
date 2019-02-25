@@ -3,7 +3,7 @@
 node_modules
 public/css/main.min.css
 public/js
-server/src
+server/
 sessions
 package-lock.json
 yarn.lock
