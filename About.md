@@ -133,8 +133,6 @@ Usually all controllers are shared, but it's possible to have controllers only f
 
 For our model - we're using Redux. State = Model. In original MVC the view should observe the model for changes and render accordingly. Redux fits this pattern perfectly and we can consider the state tree as our Model.
 
-In our architecture the Redux state is meant to be thin layer that holds the data. Using middleware that will move part of our business logic, outside of controllers is not acceptable.
-
 #### Redux Store
 
 Redux Store holds our **state**. It's initialized on startup and it's passed to controllers. Render is subscribed to store.
@@ -322,7 +320,6 @@ We can use nightwatch.js to test End-to-End functionality and practice BDD in sa
 - The state tree is deep nested (Redux) object and can contain arrays. You have full access.
 
 - Do not mutate the state. Use **object-path-immutable** to update the state.
-- Try to keep Redux implementation simple. Avoid using thunks, middleware and etc. - don't put business logic in Redux layer.
 - Use a action-reducer for easy development.
 - Reducer functions can access any branch of the state tree.
 
