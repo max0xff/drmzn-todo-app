@@ -1,6 +1,10 @@
 import { Store } from 'redux';
 import { Todo, Options } from 'src/config/interfaces';
 
+function copy(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
 // get classes
 export function classNames(item) {
   let classList = '';
@@ -125,20 +129,32 @@ export function computeInit(store:Store, hash:string) {
   };
 }
 
+/**
+ * Adds new todo to list of todos
+ * @param store initialized redux store
+ * @param text text of the new todo item
+ */
 export function computeAdd(store:Store, text:string) {
+  // get current state
   const state = store.getState();
-  const data = <[Todo]>state.Main.todo.data.map((x:Todo) => ({ ...x }));
+  // copy todos data from state
+  const data = copy(state.Main.todo.data);
+  // set initial state variable
   let isVisibleState = true;
+  // check if filter completed is true
   if (state.Main.todo.options.filter.completed) {
     isVisibleState = false;
   }
+  // generate id
   const id = randomId();
+  // prepare todo object
   const todo = {
     id,
     text: text.trim(),
     isCompleted: false,
     isVisible: isVisibleState
   };
+  // add todo object to copied data list with todos
   data.push(todo);
   // calc options
   const options = computeOptions(store, data);
@@ -150,7 +166,7 @@ export function computeAdd(store:Store, text:string) {
 
 export function computeEdit(store:Store, todoId:string, text:string) {
   const state = store.getState();
-  const data = <[Todo]>state.Main.todo.data.map((x:Todo) => ({ ...x }));
+  const data = copy(state.Main.todo.data);
   const foundIndex = getIndex(data, todoId);
   // update text
   data[foundIndex].text = text.trim();
@@ -164,7 +180,7 @@ export function computeEdit(store:Store, todoId:string, text:string) {
 
 export function computeRemove(store:Store, todoId:string) {
   const state = store.getState();
-  const data = <[Todo]>state.Main.todo.data.map((x:Todo) => ({ ...x }));
+  const data = copy(state.Main.todo.data);
   const foundIndex = getIndex(data, todoId);
   // remove item
   data.splice(foundIndex, 1);
@@ -178,7 +194,7 @@ export function computeRemove(store:Store, todoId:string) {
 
 export function computeToggle(store:Store, todoId:string) {
   const state = store.getState();
-  const data = <[Todo]>state.Main.todo.data.map((x: Todo) => ({ ...x }));
+  const data = copy(state.Main.todo.data);
   const foundIndex = getIndex(data, todoId);
   // toggle item
   data[foundIndex].isCompleted = data[foundIndex].isCompleted ? false : true;
@@ -200,7 +216,7 @@ export function computeToggle(store:Store, todoId:string) {
 
 export function computeToggleAll(store:Store) {
   const state = store.getState();
-  const data = <[Todo]>state.Main.todo.data.map((x:Todo) => ({ ...x }));
+  const data = copy(state.Main.todo.data);
   let allCompleted = true;
   data.forEach((todo:Todo) => {
     if (todo.isCompleted === false) {
@@ -238,7 +254,7 @@ export function computeToggleAll(store:Store) {
 
 export function computeFilterBy(store:Store, type = 'all') {
   const state = store.getState();
-  const data = <[Todo]>state.Main.todo.data.map((x:Todo) => ({ ...x }));
+  const data = copy(state.Main.todo.data);
   if (type === 'active') {
     data.forEach((todo:Todo) => {
       if (todo.isCompleted === false) {
@@ -274,7 +290,7 @@ export function computeFilterBy(store:Store, type = 'all') {
 
 export function computeRemoveCompleted(store:Store) {
   const state = store.getState();
-  const dataTemp = <[Todo]>state.Main.todo.data.map((x:Todo) => ({ ...x }));
+  const dataTemp = copy(state.Main.todo.data);
   // remove completed
   const data = <[Todo]>dataTemp.filter((todo:Todo) => todo.isCompleted === false);
   // calc options
@@ -287,7 +303,7 @@ export function computeRemoveCompleted(store:Store) {
 
 export function computeToggleEdit(store:Store, todoId:string, type:string, text:string) {
   const state = store.getState();
-  const data = <[Todo]>state.Main.todo.data.map((x:Todo) => ({ ...x }));
+  const data = copy(state.Main.todo.data);
   // toggle edit
   data.forEach((todo:Todo) => {
     todo.isEditing = false;

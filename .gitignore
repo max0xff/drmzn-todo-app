@@ -1,10 +1,7 @@
 .awcache
 .vscode
-node_modules
-public/css/main.min.css
-public/js
-server/
+node_modules/*
+!public/node_modules/
 sessions
 package-lock.json
 yarn.lock
-public/sw.*

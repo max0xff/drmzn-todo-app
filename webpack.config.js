@@ -94,7 +94,7 @@ const commonConfig = {
     poll: true
   },
   context: __dirname,
-  mode: `${process.env.NODE_ENV}`,
+  mode: 'production',
   node: { fs: 'empty' },
   resolve: resolveOptions,
   optimization: optimizationOptions
@@ -163,7 +163,7 @@ const client = {
 const configServer = {
   ...commonConfig,
   context: __dirname,
-  mode: 'development',
+  mode: 'production',
   devtool: `${options.devtool}`,
   target: 'node',
   externals: {
@@ -179,7 +179,7 @@ const configServer = {
 const server = {
   ...configServer,
   plugins: serverPlugins,
-  mode: 'development',
+  mode: 'production',
   name: 'app',
   target: 'node',
   externals: [nodeExternals()],

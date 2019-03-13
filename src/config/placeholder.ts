@@ -4,8 +4,8 @@ export const placeholder = (html, preloadedState, version) => `<!doctype html>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Drmzn • TodoMVC</title>
-		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
-		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/app.css">
 	</head>
 	<body>
@@ -21,7 +21,7 @@ export const placeholder = (html, preloadedState, version) => `<!doctype html>
       window.__PRELOADED_STATE__ = '${preloadedState}';
     </script>
 
-		<script src="node_modules/todomvc-common/base.js"></script>
+		<script src="js/base.js"></script>
     <script type="text/javascript" src="js/main.${version}.min.js"></script>
   </body>
 </html>`;

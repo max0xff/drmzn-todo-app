@@ -9,7 +9,9 @@
     "ie > 11"
   ],
   "scripts": {
-    "build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.js --display-max-modules 5000 --display-modules"
+    "build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.js --display-max-modules 5000 --display-modules",
+    "start": "node server/server.js",
+    "now-build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "engines": {
     "node": ">=8.5"

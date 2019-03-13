@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "env": {
+    "NODE_ENV": "production",
+    "IS_NOW": "true"
+  },
+  "name": "drmzn-todo-app",
+  "builds": [
+    {
+      "src": "./src/**/*.ts",
+      "use": "@now/node@canary"
+    }
+  ]
+}
