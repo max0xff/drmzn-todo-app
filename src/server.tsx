@@ -28,4 +28,4 @@ app.get('/', async (req, res) => {
 app.use('/', express.static('public'));
 
 const server = http.createServer(app);
-server.listen(2233);
+server.listen(process.env.PORT || 2233);
