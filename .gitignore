@@ -5,3 +5,8 @@ node_modules/*
 sessions
 package-lock.json
 yarn.lock
+cert.crt
+cert.key
+/js/main.0.0.2.min.js
+sw.0.0.2.min.js
+server/server.js

@@ -25,4 +25,19 @@ import App from 'src/components/root';
   // mustache render
   // views(store, container, templates).render();
 
+  if ('serviceWorker' in navigator) {
+    (<any>navigator).serviceWorker.register('/sw.0.0.2.min.js').then((registration) => {
+      console.log('service worker registrated...');
+
+      (<any>navigator).serviceWorker.addEventListener('message', (event) => {
+        console.log(event);
+      });
+
+    }, (err) => {
+      console.log('service worker registration failed: ', err);
+    });
+  } else {
+    console.log('service worker not found');
+  }
+
 })();

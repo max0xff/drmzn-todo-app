@@ -18,4 +18,4 @@ const Todos = (props) => {
   );
 };
 
-export default Todos;
+export default React.memo(Todos);

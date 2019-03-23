@@ -152,7 +152,7 @@ const client = {
   performance: { hints: false },
   name: 'main',
   target: 'web',
-  entry: './src/app.tsx',
+  entry: './src/app.ts',
   output: {
     path: path.resolve(__dirname, './public/js/'),
     filename: `main.${version}.min.js`
@@ -184,7 +184,7 @@ const server = {
   target: 'node',
   externals: [nodeExternals()],
   devtool: 'inline-source-map',
-  entry: './src/server.tsx',
+  entry: './src/server.ts',
   output: {
     path: path.resolve(__dirname, './server/'),
     filename: 'server.js'
@@ -192,7 +192,22 @@ const server = {
   module: moduleOptionsClient
 };
 
+const sw = {
+  ...commonConfig,
+  name: 'sw',
+  target: 'webworker',
+  devtool: `${options.devtool}`,
+  entry: './src/sw.ts',
+  plugins: clientPlugins,
+  output: {
+    path: path.resolve(__dirname, './public/'),
+    filename: `sw.${version}.min.js`
+  },
+  module: moduleOptionsClient
+};
+
 module.exports = [
   client,
-  server
+  server,
+  sw
 ];
