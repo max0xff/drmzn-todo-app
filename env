@@ -1,3 +1,8 @@
 export SERVER_IP=127.0.0.1
 export SERVER_PORT=2255
 export NODE_ENV=production
+export appId=742782
+export key=7b8d394535de786ba7cc
+export secret=4164af9d017335b25e9b
+export cluster=eu
+export encrypted=true

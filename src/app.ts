@@ -1,6 +1,8 @@
 import 'src/styles/default.scss';
 import 'src/config/events';
 
+import * as Pusher from 'pusher-js';
+
 import { runSagas } from 'src/config/sagas';
 import { store } from 'src/config/store';
 
@@ -31,6 +33,16 @@ import App from 'src/components/root';
 
       (<any>navigator).serviceWorker.addEventListener('message', (event) => {
         console.log(event);
+      });
+
+      const pusher = new Pusher('7b8d394535de786ba7cc', {
+        cluster: 'eu',
+        forceTLS: true
+      });
+
+      const channel = pusher.subscribe('drmzn');
+      channel.bind('secret-message', (data) => {
+        console.log(`%c${data.message}`, 'border-radius: 5px; background: #dc4421; color: #fff; padding: 10px 20px;');
       });
 
     }, (err) => {

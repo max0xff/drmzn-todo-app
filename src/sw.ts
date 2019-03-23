@@ -1,4 +1,5 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.1.1/workbox-sw.js');
+importScripts('https://js.pusher.com/4.4/pusher.worker.min.js');
 
 declare let workbox;
 
