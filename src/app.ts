@@ -28,7 +28,7 @@ import App from 'src/components/root';
   // views(store, container, templates).render();
 
   if ('serviceWorker' in navigator) {
-    (<any>navigator).serviceWorker.register('/sw.0.0.2.min.js').then((registration) => {
+    (<any>navigator).serviceWorker.register('/sw.0.0.3.min.js').then((registration) => {
       console.log('service worker registrated...');
 
       (<any>navigator).serviceWorker.addEventListener('message', (event) => {

@@ -28,7 +28,7 @@ const pusher = new Pusher({
   cluster: process.env.cluster
 });
 
-const version = '0.0.2';
+const version = '0.0.3';
 
 const app = express();
 app.use(compression());
