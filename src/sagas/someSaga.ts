@@ -4,12 +4,12 @@ import { store } from 'src/config/store';
 
 function * someAction() {
   yield delay(2000);
-  yield console.log('yoyo');
-  yield actions.monitorSaga.dispatch(store, 'testing action-reducer');
+  yield console.log('yoyo, added items?');
+  yield actions.monitorSaga.dispatch(store, 'testing action-reducer after add action');
 }
 
 function * someSaga() {
-  yield takeLatest('add', someAction);
+  yield takeLatest('ADD', someAction);
 }
 
 export default someSaga;

@@ -156,12 +156,7 @@ export function computeAdd(store:Store, text:string) {
   };
   // add todo object to copied data list with todos
   data.push(todo);
-  // calc options
-  const options = computeOptions(store, data);
-  return {
-    data,
-    options
-  };
+  return data;
 }
 
 export function computeEdit(store:Store, todoId:string, text:string) {
@@ -170,12 +165,7 @@ export function computeEdit(store:Store, todoId:string, text:string) {
   const foundIndex = getIndex(data, todoId);
   // update text
   data[foundIndex].text = text.trim();
-  // calc options
-  const options = computeOptions(store, data);
-  return {
-    data,
-    options
-  };
+  return data;
 }
 
 export function computeRemove(store:Store, todoId:string) {
@@ -184,12 +174,7 @@ export function computeRemove(store:Store, todoId:string) {
   const foundIndex = getIndex(data, todoId);
   // remove item
   data.splice(foundIndex, 1);
-  // calc options
-  const options = computeOptions(store, data);
-  return {
-    data,
-    options
-  };
+  return data;
 }
 
 export function computeToggle(store:Store, todoId:string) {
@@ -206,12 +191,7 @@ export function computeToggle(store:Store, todoId:string) {
   if (state.Main.todo.options.filter.active) {
     data[foundIndex].isVisible = data[foundIndex].isCompleted ? false : true ;
   }
-  // calc options
-  const options = computeOptions(store, data);
-  return {
-    data,
-    options
-  };
+  return data;
 }
 
 export function computeToggleAll(store:Store) {
@@ -244,12 +224,7 @@ export function computeToggleAll(store:Store) {
       }
     }
   });
-  // calc options
-  const options = computeOptions(store, data);
-  return {
-    data,
-    options
-  };
+  return data;
 }
 
 export function computeFilterBy(store:Store, type = 'all') {
@@ -278,14 +253,7 @@ export function computeFilterBy(store:Store, type = 'all') {
       todo.isVisible = true;
     });
   }
-  // calc options
-  const options = computeOptions(store, data);
-  options.filter = <any>{};
-  options.filter[type] = true;
-  return {
-    data,
-    options
-  };
+  return data;
 }
 
 export function computeRemoveCompleted(store:Store) {
@@ -293,12 +261,7 @@ export function computeRemoveCompleted(store:Store) {
   const dataTemp = copy(state.Main.todo.data);
   // remove completed
   const data = <[Todo]>dataTemp.filter((todo:Todo) => todo.isCompleted === false);
-  // calc options
-  const options = computeOptions(store, data);
-  return {
-    data,
-    options
-  };
+  return data;
 }
 
 export function computeToggleEdit(store:Store, todoId:string, type:string, text:string) {
@@ -319,10 +282,5 @@ export function computeToggleEdit(store:Store, todoId:string, type:string, text:
     const foundIndex = getIndex(data, todoId);
     data[foundIndex].text = text;
   }
-  // calc options
-  const options = computeOptions(store, data);
-  return {
-    data,
-    options
-  };
+  return data;
 }

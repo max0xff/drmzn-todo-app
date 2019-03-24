@@ -2,9 +2,11 @@ import { all } from 'redux-saga/effects';
 import { sagaMiddleware } from 'src/config/store';
 
 import someSaga from 'src/sagas/someSaga';
+import optionsSelectorSaga from 'src/sagas/optionsSelectorSaga';
 
 function * rootSaga() {
   yield all([
+    optionsSelectorSaga(),
     someSaga()
   ]);
 }

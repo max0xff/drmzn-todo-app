@@ -15,7 +15,7 @@ export namespace page {
 }
 
 export namespace init {
-  export const type = 'init';
+  export const type = 'INIT';
   export const dispatch = (store, data, options) => {
     store.dispatch({
       type,
@@ -25,127 +25,127 @@ export namespace init {
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
+    .set('Main.todo.options', action.options)
+    .value();
+}
+
+export namespace options {
+  export const type = 'OPTIONS';
+  export const dispatch = (store, options) => {
+    store.dispatch({
+      type,
+      options
+    });
+  };
+  export const reduce = (state, action) => immutable(state)
     .set('Main.todo.options', action.options)
     .value();
 }
 
 export namespace add {
-  export const type = 'add';
-  export const dispatch = (store, data, options) => {
+  export const type = 'ADD';
+  export const dispatch = (store, data) => {
     store.dispatch({
       type,
-      data,
-      options
+      data
     });
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
     .value();
 }
 
 export namespace edit {
-  export const type = 'edit';
-  export const dispatch = (store, data, options) => {
+  export const type = 'EDIT';
+  export const dispatch = (store, data) => {
     store.dispatch({
       type,
-      data,
-      options
+      data
     });
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
     .value();
 }
 
 export namespace remove {
-  export const type = 'remove';
-  export const dispatch = (store, data, options) => {
+  export const type = 'REMOVE';
+  export const dispatch = (store, data) => {
     store.dispatch({
       type,
-      data,
-      options
+      data
     });
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
     .value();
 }
 
 export namespace toggle {
-  export const type = 'toggle';
-  export const dispatch = (store, data, options) => {
+  export const type = 'TOGGLE';
+  export const dispatch = (store, data) => {
     store.dispatch({
       type,
-      data,
-      options
+      data
     });
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
     .value();
 }
 
 export namespace toggleAll {
-  export const type = 'toggleAll';
-  export const dispatch = (store, data, options) => {
+  export const type = 'TOGGLE_ALL';
+  export const dispatch = (store, data) => {
     store.dispatch({
       type,
-      data,
-      options
+      data
     });
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
     .value();
 }
 
 export namespace filterBy {
-  export const type = 'filterBy';
-  export const dispatch = (store, data, options) => {
+  export const type = 'FILTER_BY';
+  export const dispatch = (store, data, filter) => {
     store.dispatch({
       type,
       data,
-      options
+      filter
     });
   };
   export const reduce = (state, action) => immutable(state)
-    .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
-    .value();
+  .set('Main.todo.data', action.data)
+  .set('Main.todo.options.filter', {})
+  .set(`Main.todo.options.filter.${action.filter}`, true)
+  .value();
 }
 
 export namespace removeCompleted {
-  export const type = 'removeCompleted';
-  export const dispatch = (store, data, options) => {
+  export const type = 'REMOVE_COMPLETED';
+  export const dispatch = (store, data) => {
     store.dispatch({
       type,
-      data,
-      options
+      data
     });
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
     .value();
 }
 
 export namespace toggleEditing {
-  export const type = 'toggleEditing';
-  export const dispatch = (store, data, options) => {
+  export const type = 'TOGGLE_EDITING';
+  export const dispatch = (store, data) => {
     store.dispatch({
       type,
-      data,
-      options
+      data
     });
   };
   export const reduce = (state, action) => immutable(state)
     .set('Main.todo.data', action.data)
-    .set('Main.todo.options', action.options)
     .value();
 }
 

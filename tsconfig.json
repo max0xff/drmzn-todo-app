@@ -11,8 +11,7 @@
     "sourceMap": true,
     "types": [
       "node",
-      "webpack-env",
-      "jest"
+      "webpack-env"
     ],
     "moduleResolution": "node",
     "noEmit": false
