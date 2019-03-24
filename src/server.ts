@@ -1,8 +1,8 @@
 import * as express from 'express';
 import * as compression from 'compression';
-// import * as http from 'http';
-import * as https from 'https';
-import * as fs from 'fs';
+import * as http from 'http';
+// import * as https from 'https';
+// import * as fs from 'fs';
 
 import { storeCreate } from 'src/config/store';
 import { Todo } from 'src/controllers/TodoController';
@@ -36,13 +36,13 @@ app.get('/', async (req, res) => {
 
 app.use('/', express.static('public'));
 
-// const server = http.createServer(app);
-// server.listen(process.env.PORT);
+const server = http.createServer(app);
+server.listen(process.env.PORT);
 
-const options = {
-  key: fs.readFileSync('cert.key'),
-  cert: fs.readFileSync('cert.crt')
-};
+// const options = {
+//   key: fs.readFileSync('cert.key'),
+//   cert: fs.readFileSync('cert.crt')
+// };
 
-const server = https.createServer(options, app);
-server.listen(443);
+// const server = https.createServer(options, app);
+// server.listen(443);
