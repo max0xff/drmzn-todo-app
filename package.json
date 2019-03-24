@@ -1,6 +1,6 @@
 {
   "name": "drmzn-todo-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "src/app.tsx",
   "browserslist": [
@@ -73,8 +73,6 @@
     "permit": "^0.2.4",
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.0.0",
-    "pusher": "^2.2.0",
-    "pusher-js": "^4.4.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-redux": "^6.0.1",

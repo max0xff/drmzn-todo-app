@@ -1,12 +1,8 @@
 import * as express from 'express';
 import * as compression from 'compression';
 import * as http from 'http';
-import * as https from 'https';
-import * as fs from 'fs';
-
-const Pusher = require('pusher');
-
-import * as jsStringEscape from 'js-string-escape';
+// import * as https from 'https';
+// import * as fs from 'fs';
 
 import { storeCreate } from 'src/config/store';
 import { Todo } from 'src/controllers/TodoController';
@@ -21,15 +17,7 @@ import App from 'src/components/root';
 // const tpls = require.context('src/mustache', true, /\.html$/);
 // const { templates, container } = getTemplates(tpls);
 
-const pusher = new Pusher({
-  appId: process.env.APPID,
-  key: process.env.KEY,
-  secret: process.env.SECRET,
-  cluster: process.env.CLUSTER,
-  useTLS: process.env.ENCRYPTED
-});
-
-const version = '0.0.3';
+const version = '0.0.4';
 
 const app = express();
 app.use(compression());
@@ -44,14 +32,6 @@ app.get('/', async (req, res) => {
   // uncomment this to enable mustache render
   // ssr(placeholder, container, templates, version).render(store, req, res);
 
-});
-
-app.get('/secret-message/:message', async (req, res) => {
-  const message = jsStringEscape(req.params.message);
-  pusher.trigger('drmzn', 'secret-message', {
-    message
-  });
-  res.status(200).end();
 });
 
 app.use('/', express.static('public'));
