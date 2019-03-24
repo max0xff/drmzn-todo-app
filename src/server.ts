@@ -22,10 +22,11 @@ import App from 'src/components/root';
 // const { templates, container } = getTemplates(tpls);
 
 const pusher = new Pusher({
-  appId: process.env.appId,
-  key: process.env.key,
-  secret: process.env.secret,
-  cluster: process.env.cluster
+  appId: process.env.APPID,
+  key: process.env.KEY,
+  secret: process.env.SECRET,
+  cluster: process.env.CLUSTER,
+  useTLS: process.env.ENCRYPTED
 });
 
 const version = '0.0.3';

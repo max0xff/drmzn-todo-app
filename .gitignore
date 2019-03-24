@@ -10,3 +10,4 @@ cert.key
 #/js/main.0.0.3.min.js
 #sw.0.0.3.min.js
 #server/server.js
+env.pusher
