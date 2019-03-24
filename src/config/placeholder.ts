@@ -21,7 +21,6 @@ export const placeholder = (html, preloadedState, version) => `<!doctype html>
       window.__PRELOADED_STATE__ = '${preloadedState}';
     </script>
 
-		<script src="/js/base.js"></script>
     <script type="text/javascript" src="/js/main.${version}.min.js"></script>
   </body>
 </html>`;
