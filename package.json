@@ -14,7 +14,7 @@
     "now-build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "engines": {
-    "node": ">=8.5"
+    "node": "10.15.3"
   },
   "babel": {
     "presets": [
