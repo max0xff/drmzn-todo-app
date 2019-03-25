@@ -189,7 +189,7 @@ export function computeToggle(store:Store, todoId:string) {
   }
   // hide if filtered
   if (state.Main.todo.options.filter.active) {
-    data[foundIndex].isVisible = data[foundIndex].isCompleted ? false : true ;
+    data[foundIndex].isVisible = data[foundIndex].isCompleted ? false : true;
   }
   return data;
 }
@@ -230,29 +230,15 @@ export function computeToggleAll(store:Store) {
 export function computeFilterBy(store:Store, type = 'all') {
   const state = store.getState();
   const data = copy(state.Main.todo.data);
-  if (type === 'active') {
-    data.forEach((todo:Todo) => {
-      if (todo.isCompleted === false) {
-        todo.isVisible = true;
-      } else {
-        todo.isVisible = false;
-      }
-    });
-  }
-  if (type === 'completed') {
-    data.forEach((todo:Todo) => {
-      if (todo.isCompleted === true) {
-        todo.isVisible = true;
-      } else {
-        todo.isVisible = false;
-      }
-    });
-  }
-  if (type === 'all') {
-    data.forEach((todo:Todo) => {
+  data.forEach((todo:Todo) => {
+    if (type === 'active') {
+      todo.isVisible = (todo.isCompleted === false) ? true : false;
+    } else if (type === 'completed') {
+      todo.isVisible = (todo.isCompleted === true) ? true : false;
+    } else if (type === 'all') {
       todo.isVisible = true;
-    });
-  }
+    }
+  });
   return data;
 }
 

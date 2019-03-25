@@ -16,6 +16,7 @@ export const Todo = (store:Store) => {
   const init = (hash:string) => {
     const { data, options } = computeInit(store, hash);
     actions.init.dispatch(store, data, options);
+    return Promise.resolve();
   };
 
   const add = (text:string) => {
