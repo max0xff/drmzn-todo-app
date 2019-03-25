@@ -43,7 +43,7 @@ export namespace options {
 }
 
 export namespace add {
-  export const type = 'ADD';
+  export const type = 'TODO_ADD';
   export const dispatch = (store, data) => {
     store.dispatch({
       type,
@@ -56,7 +56,7 @@ export namespace add {
 }
 
 export namespace edit {
-  export const type = 'EDIT';
+  export const type = 'TODO_EDIT';
   export const dispatch = (store, data) => {
     store.dispatch({
       type,
@@ -69,7 +69,7 @@ export namespace edit {
 }
 
 export namespace remove {
-  export const type = 'REMOVE';
+  export const type = 'TODO_REMOVE';
   export const dispatch = (store, data) => {
     store.dispatch({
       type,
@@ -82,7 +82,7 @@ export namespace remove {
 }
 
 export namespace toggle {
-  export const type = 'TOGGLE';
+  export const type = 'TODO_TOGGLE';
   export const dispatch = (store, data) => {
     store.dispatch({
       type,
@@ -95,7 +95,7 @@ export namespace toggle {
 }
 
 export namespace toggleAll {
-  export const type = 'TOGGLE_ALL';
+  export const type = 'TODO_TOGGLE_ALL';
   export const dispatch = (store, data) => {
     store.dispatch({
       type,
@@ -108,7 +108,7 @@ export namespace toggleAll {
 }
 
 export namespace filterBy {
-  export const type = 'FILTER_BY';
+  export const type = 'TODO_FILTER_BY';
   export const dispatch = (store, data, filter) => {
     store.dispatch({
       type,
@@ -124,7 +124,7 @@ export namespace filterBy {
 }
 
 export namespace removeCompleted {
-  export const type = 'REMOVE_COMPLETED';
+  export const type = 'TODO_REMOVE_COMPLETED';
   export const dispatch = (store, data) => {
     store.dispatch({
       type,
@@ -137,7 +137,7 @@ export namespace removeCompleted {
 }
 
 export namespace toggleEditing {
-  export const type = 'TOGGLE_EDITING';
+  export const type = 'TODO_TOGGLE_EDITING';
   export const dispatch = (store, data) => {
     store.dispatch({
       type,

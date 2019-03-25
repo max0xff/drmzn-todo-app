@@ -12,6 +12,6 @@ function * rootSaga() {
 }
 
 export function runSagas() {
-  console.log('runs sagas');
+  // console.log('runs sagas');
   sagaMiddleware.run(rootSaga);
 }

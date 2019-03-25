@@ -7,7 +7,3 @@ package-lock.json
 yarn.lock
 cert.crt
 cert.key
-#/js/main.0.0.6.min.js
-#sw.0.0.6.min.js
-#server/server.js
-env.pusher

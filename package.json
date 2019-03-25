@@ -1,6 +1,6 @@
 {
   "name": "drmzn-todo-app",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "src/app.tsx",
   "browserslist": [
@@ -14,7 +14,7 @@
     "now-build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "engines": {
-    "node": "10.15.3"
+    "node": ">=8"
   },
   "babel": {
     "presets": [
