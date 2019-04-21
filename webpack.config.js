@@ -80,10 +80,10 @@ const client = {
             meta: {
               robots: 'index, follow',
               og: {
-                site_name: 'sitename',
-                description: 'some description',
+                site_name: 'drmzn-todo-app',
+                description: 'Simple demo of drmzn todo app',
                 image: '',
-                title: 'some title'
+                title: 'Drmzn Todo App Example'
               }
             }
           }
