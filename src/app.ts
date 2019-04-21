@@ -5,7 +5,7 @@ import { runSagas } from 'src/sagas';
 import { store } from 'src/utils/store';
 
 // react
-import { views } from 'drmzn-react';
+import { csr } from 'src/utils/csr';
 import App from 'src/components/root';
 
 // mustache
@@ -20,7 +20,7 @@ import App from 'src/components/root';
   runSagas();
 
   // react render
-  views(store, App).render();
+  csr(store, App).render();
 
   // mustache render
   // views(store, container, templates).render();

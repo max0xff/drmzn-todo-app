@@ -52,8 +52,6 @@
     "cypress": "^3.2.0",
     "dom-delegate": "^2.2.0",
     "drmzn-mustache": "^0.0.3",
-    "drmzn-react": "^0.0.5",
-    "drmzn-redux": "^0.2.2",
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme": "^3.9.0",
     "expect": "^24.7.1",
