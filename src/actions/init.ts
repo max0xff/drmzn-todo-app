@@ -17,12 +17,12 @@ export namespace init {
       meta: {
         robots: 'index, follow',
         og: {
-          title: 'title default',
-          description: 'desc default',
+          title: 'Drmzn Todo App Example',
+          description: 'Simple demo of drmzn todo app',
           image: '',
-          site_name: 'asdasdasd'
+          site_name: 'drmzn-todo-app'
         },
-        canonical: ''
+        canonical: 'https://drmzn-todo-app.herokuapp.com/'
       }
     })
     .set('Main.todo.data', action.data)
