@@ -5,10 +5,6 @@ import Header from 'src/components/header';
 import Footer from 'src/components/footer';
 import Todos from 'src/components/todos';
 
-function mapStateToProps(state) {
-  return state;
-}
-
 const App = (props) => {
   return (
     <section className="todoapp">
@@ -20,4 +16,4 @@ const App = (props) => {
 };
 
 // export default App;
-export default connect(mapStateToProps)(App);
+export default App;

@@ -1,9 +1,8 @@
 .awcache
 .vscode
-node_modules/*
-!public/node_modules/
-sessions
+dist
+cypress/videos
+cypress/screenshots
+node_modules
 package-lock.json
 yarn.lock
-cert.crt
-cert.key

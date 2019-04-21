@@ -10,7 +10,7 @@ import { placeholder } from 'src/config/placeholder';
 import { runSagas } from 'src/sagas';
 
 // react
-import { ssr } from 'drmzn-react';
+import { ssr } from 'src/utils/ssr';
 import App from 'src/components/root';
 
 // mustache
@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
   const store = storeCreate();
   runSagas();
   await Todo(store).init('/');
-  ssr(placeholder, App, version).render(store, req, res);
+  ssr(placeholder, App).render(store, res);
 });
 
 // Mustache render

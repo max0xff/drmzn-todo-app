@@ -10,6 +10,21 @@ export namespace init {
     });
   };
   export const reduce = (state, action) => immutable(state)
+    .set('config', {
+      build: {
+        version: '0.0.8'
+      },
+      meta: {
+        robots: 'index, follow',
+        og: {
+          title: 'title default',
+          description: 'desc default',
+          image: '',
+          site_name: 'asdasdasd'
+        },
+        canonical: ''
+      }
+    })
     .set('Main.todo.data', action.data)
     .set('Main.todo.options', action.options)
     .value();

@@ -16,7 +16,7 @@ export const ssr = (placeholder, App) => {
         preloadedState
       }
     };
-    return placeholder(configData);
+    res.end(placeholder(configData));
   };
   return {
     render

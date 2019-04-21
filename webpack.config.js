@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const nodeExternals = require('webpack-node-externals');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // Client settings
 const client = {
@@ -67,13 +68,36 @@ const client = {
             ignoreCustomFragments: [/\{\{.*?}}/]
           }
         }
+      },
+      {
+        test: /\.mst$/,
+        loader: "mustache-loader",
+        options: {
+          render: {
+            build: {
+              version: '0.0.8'
+            },
+            meta: {
+              robots: 'index, follow',
+              og: {
+                site_name: 'sitename',
+                description: 'some description',
+                image: '',
+                title: 'some title'
+              }
+            }
+          }
+        }  
       }
     ]
   },
-  plugins: [ 
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/config/index.mst',
+      inject: false
+    }),
     new MiniCssExtractPlugin({
-      filename: `[name].${version}.min.css`,
-      chunkFilename: `[id].${version}.min.css`,
+      filename: `[name].${version}.min.css`
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new CopyPlugin([
