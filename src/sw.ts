@@ -7,13 +7,10 @@ if (workbox) {
   workbox.setConfig({ debug: true });
 
   workbox.precaching.precacheAndRoute([
-    { url: '/js/main.0.0.8.min.js', revision: '0.0.8' },
+    { url: '/main.0.0.8.min.js', revision: '0.0.8' },
     { url: '/sw.0.0.8.min.js', revision: '0.0.8' },
     { url: '/index.html', revision: '0.0.8' },
-    { url: '/css/app.css', revision: '0.0.8' },
-    { url: '/css/base.css', revision: '0.0.8' },
-    { url: '/css/index.css', revision: '0.0.8' },
-    { url: '/css/main.min.css', revision: '0.0.8' },
+    { url: '/main.0.0.8.min.css', revision: '0.0.8' },
     { url: '/favicon.ico', revision: '0.0.8' }
   ]);
 
