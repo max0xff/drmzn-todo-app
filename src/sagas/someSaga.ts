@@ -1,6 +1,6 @@
 import { takeLatest, delay } from 'redux-saga/effects';
-import * as actions from 'src/config/actions';
-import { store } from 'src/config/store';
+import * as actions from 'src/actions';
+import { store } from 'src/utils/store';
 
 function * someAction() {
   yield delay(2000);

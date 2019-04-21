@@ -1,0 +1,10 @@
+export { computeAdd } from 'src/functions/computeAdd';
+export { computeEdit } from 'src/functions/computeEdit';
+export { computeFilterBy } from 'src/functions/computeFilterBy';
+export { computeInit } from 'src/functions/computeInit';
+export { computeOptions } from 'src/functions/computeOptions';
+export { computeRemove } from 'src/functions/computeRemove';
+export { computeRemoveCompleted } from 'src/functions/computeRemoveCompleted';
+export { computeToggle } from 'src/functions/computeToggle';
+export { computeToggleAll } from 'src/functions/computeToggleAll';
+export { computeToggleEdit } from 'src/functions/computeToggleEdit';

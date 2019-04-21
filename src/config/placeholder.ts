@@ -4,9 +4,7 @@ export const placeholder = (html, preloadedState, version) => `<!doctype html>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Drmzn • TodoMVC</title>
-		<link rel="stylesheet" href="/css/base.css">
-		<link rel="stylesheet" href="/css/index.css">
-		<link rel="stylesheet" href="/css/app.css">
+		<link rel="stylesheet" href="/main.${version}.min.css">
 	</head>
 	<body>
 		<div id="root">${html}</div>
@@ -21,6 +19,8 @@ export const placeholder = (html, preloadedState, version) => `<!doctype html>
       window.__PRELOADED_STATE__ = '${preloadedState}';
     </script>
 
-    <script type="text/javascript" src="/js/main.${version}.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script type="text/javascript" src="/main.${version}.min.js"></script>
   </body>
 </html>`;

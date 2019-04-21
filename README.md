@@ -1,15 +1,7 @@
 # Drmzn todo app
 
-`source ./env`
+yarn install
+yarn build
+yarn start
 
-`yarn install`
-
-`yarn build`
-
-`cd public/`
-
-`yarn install`
-
-`cd ..`
-
-`node server/server.js`
+visit localhost:3000

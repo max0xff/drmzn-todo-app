@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Todo, Options } from 'src/config/interfaces';
+import { Todo, Options } from 'src/interfaces';
 import TodoItem from 'src/components/todo';
 
 const Todos = (props) => {

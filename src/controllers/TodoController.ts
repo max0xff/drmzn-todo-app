@@ -1,5 +1,5 @@
 import { Store } from 'redux';
-import * as actions from 'src/config/actions';
+import * as actions from 'src/actions';
 import {
   computeInit,
   computeAdd,
@@ -10,7 +10,7 @@ import {
   computeFilterBy,
   computeRemoveCompleted,
   computeToggleEdit
- } from 'src/config/functions';
+ } from 'src/functions';
 
 export const Todo = (store:Store) => {
   const init = (hash:string) => {

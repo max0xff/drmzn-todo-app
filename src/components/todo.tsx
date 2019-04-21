@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { classNames } from 'src/config/functions';
-import { Todo } from 'src/config/interfaces';
+import { classNames } from 'src/functions/utils';
+import { Todo } from 'src/interfaces';
 
 const TodoItem = (props) => {
   const item:Todo = props.data;

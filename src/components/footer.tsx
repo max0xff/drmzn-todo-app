@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Options } from 'src/config/interfaces';
+import { Options } from 'src/interfaces';
 
 const Footer = (props) => {
   const options:Options = props.state.Main.todo.options;

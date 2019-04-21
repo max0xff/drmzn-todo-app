@@ -1,8 +1,8 @@
 import { takeLatest, cancel } from 'redux-saga/effects';
-import * as actions from 'src/config/actions';
-import { store } from 'src/config/store';
+import * as actions from 'src/actions';
+import { store } from 'src/utils/store';
 
-import { computeOptions } from 'src/config/functions';
+import { computeOptions } from 'src/functions';
 
 function * computeOptionsAction(action) {
   if (action.type === 'OPTIONS') {

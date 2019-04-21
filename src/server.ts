@@ -4,10 +4,10 @@ import * as http from 'http';
 // import * as https from 'https';
 // import * as fs from 'fs';
 
-import { storeCreate } from 'src/config/store';
+import { storeCreate } from 'src/utils/store';
 import { Todo } from 'src/controllers/TodoController';
 import { placeholder } from 'src/config/placeholder';
-import { runSagas } from 'src/config/sagas';
+import { runSagas } from 'src/sagas';
 
 // react
 import { ssr } from 'drmzn-react';
@@ -18,7 +18,7 @@ import App from 'src/components/root';
 // const tpls = require.context('src/mustache', true, /\.html$/);
 // const { templates, container } = getTemplates(tpls);
 
-const version = '0.0.7';
+const version = '0.0.8';
 
 const app = express();
 app.use(compression());
@@ -39,14 +39,14 @@ app.get('/', async (req, res) => {
 //   ssr(placeholder, container, templates, version).render(store, req, res);
 // });
 
-app.use('/', express.static('public'));
+app.use('/', express.static('dist/public'));
 
 const server = http.createServer(app);
-server.listen(process.env.PORT);
+server.listen(3000);
 
 // const options = {
-//   key: fs.readFileSync('cert.key'),
-//   cert: fs.readFileSync('cert.crt')
+//   key: fs.readFileSync('localhost.key'),
+//   cert: fs.readFileSync('localhost.crt')
 // };
 
 // const server = https.createServer(options, app);

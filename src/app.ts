@@ -1,8 +1,8 @@
 import 'src/styles/default.scss';
-import 'src/config/events';
+import 'src/events/events';
 
-import { runSagas } from 'src/config/sagas';
-import { store } from 'src/config/store';
+import { runSagas } from 'src/sagas';
+import { store } from 'src/utils/store';
 
 // react
 import { views } from 'drmzn-react';
@@ -26,7 +26,7 @@ import App from 'src/components/root';
   // views(store, container, templates).render();
 
   if ('serviceWorker' in navigator) {
-    (<any>navigator).serviceWorker.register('/sw.0.0.7.min.js').then((registration) => {
+    (<any>navigator).serviceWorker.register('/sw.0.0.8.min.js').then((registration) => {
       console.log('service worker registrated...');
 
       (<any>navigator).serviceWorker.addEventListener('message', (event) => {
