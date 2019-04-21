@@ -42,7 +42,7 @@ app.get('/', async (req, res) => {
 app.use('/', express.static('dist/public'));
 
 const server = http.createServer(app);
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 
 // const options = {
 //   key: fs.readFileSync('localhost.key'),
