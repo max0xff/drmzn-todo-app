@@ -1,4 +1,4 @@
-import * as immutable from 'object-path-immutable/index';
+import * as immutable from 'object-path-immutable';
 
 export namespace toggleAll {
   export const type = 'TODO_TOGGLE_ALL';
@@ -8,7 +8,7 @@ export namespace toggleAll {
       data
     });
   };
-  export const reduce = (state, action) => immutable(state)
+  export const reduce = (state, action) => immutable.wrap(state)
     .set('Main.todo.data', action.data)
     .value();
 }

@@ -1,4 +1,4 @@
-import * as immutable from 'object-path-immutable/index';
+import * as immutable from 'object-path-immutable';
 
 export namespace removeCompleted {
   export const type = 'TODO_REMOVE_COMPLETED';
@@ -8,7 +8,7 @@ export namespace removeCompleted {
       data
     });
   };
-  export const reduce = (state, action) => immutable(state)
+  export const reduce = (state, action) => immutable.wrap(state)
     .set('Main.todo.data', action.data)
     .value();
 }

@@ -100,9 +100,11 @@ const client = {
       filename: `[name].${version}.min.css`
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new CopyPlugin([
-      { from: './src/media', to: './' },
-    ])
+    new CopyPlugin({
+      patterns: [
+        { from: './src/media', to: './' },
+      ],
+    }),
   ],
   resolve: {
     extensions: ['.ts', '.js', '.tsx'],

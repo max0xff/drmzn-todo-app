@@ -1,4 +1,4 @@
-import * as immutable from 'object-path-immutable/index';
+import * as immutable from 'object-path-immutable';
 
 export namespace init {
   export const type = 'INIT';
@@ -9,7 +9,7 @@ export namespace init {
       options
     });
   };
-  export const reduce = (state, action) => immutable(state)
+  export const reduce = (state, action) => immutable.wrap(state)
     .set('config', {
       build: {
         version: '0.0.8'

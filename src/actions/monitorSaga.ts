@@ -1,4 +1,4 @@
-import * as immutable from 'object-path-immutable/index';
+import * as immutable from 'object-path-immutable';
 
 export namespace monitorSaga {
   export const type = 'monitorSaga';
@@ -8,7 +8,7 @@ export namespace monitorSaga {
       data
     });
   };
-  export const reduce = (state, action) => immutable(state)
+  export const reduce = (state, action) => immutable.wrap(state)
     .set('Main.saga.test', action.data)
     .set('Main.saga.reducer', 'yoyo')
     .value();

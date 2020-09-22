@@ -1,2 +1,6 @@
-import { Delegate } from 'ftdomdelegate';
-export const events: any = new Delegate(document.body);
+/* eslint-disable no-undef */
+import Delegate from 'ftdomdelegate';
+
+export const events = new Delegate(document.body);
+
+export default events;

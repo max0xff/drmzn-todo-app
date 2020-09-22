@@ -1,4 +1,4 @@
-import * as immutable from 'object-path-immutable/index';
+import * as immutable from 'object-path-immutable';
 
 export namespace page {
   export const type = 'PAGE';
@@ -8,7 +8,7 @@ export namespace page {
       page
     });
   };
-  export const reduce = (state, action) => immutable(state)
+  export const reduce = (state, action) => immutable.wrap(state)
     .set('Main.options.mainPage', {})
     .set(`Main.options.mainPage.${action.page}`, true)
     .value();

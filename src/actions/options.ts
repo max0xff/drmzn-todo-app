@@ -1,4 +1,4 @@
-import * as immutable from 'object-path-immutable/index';
+import * as immutable from 'object-path-immutable';
 
 export namespace options {
   export const type = 'OPTIONS';
@@ -8,7 +8,7 @@ export namespace options {
       options
     });
   };
-  export const reduce = (state, action) => immutable(state)
+  export const reduce = (state, action) => immutable.wrap(state)
     .set('Main.todo.options', action.options)
     .value();
 }
