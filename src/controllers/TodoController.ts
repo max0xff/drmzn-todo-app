@@ -9,10 +9,10 @@ import {
   computeToggleAll,
   computeFilterBy,
   computeRemoveCompleted,
-  computeToggleEdit
- } from 'src/functions';
+  computeToggleEdit,
+} from 'src/functions';
 
-export const Todo = (store:Store) => {
+const Todo = (store:Store) => {
   const init = (hash:string) => {
     const { data, options } = computeInit(store, hash);
     actions.init.dispatch(store, data, options);
@@ -68,6 +68,8 @@ export const Todo = (store:Store) => {
     toggleAll,
     filterBy,
     removeCompleted,
-    toggleEditing
+    toggleEditing,
   };
 };
+
+export default Todo;

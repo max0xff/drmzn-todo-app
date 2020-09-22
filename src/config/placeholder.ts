@@ -1,5 +1,6 @@
 export const placeholder = (data) => {
   const { build, meta, content } = data;
+  // console.log(data);
   return `<!doctype html>
   <html lang="en">
     <head>
@@ -38,3 +39,5 @@ export const placeholder = (data) => {
     </body>
   </html>`;
 };
+
+export default placeholder;

@@ -1,15 +1,19 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-undef */
 import { store } from 'src/utils/store';
-import { Todo } from 'src/controllers/TodoController';
 import { getProp } from 'src/functions/utils';
 
 import { Delegate } from 'dom-delegate';
-export const events: any = new Delegate(document.body);
+
+import Todo from 'src/controllers/TodoController';
+
+const events: any = new Delegate(document.body);
 
 console.log('init');
 Todo(store).init(document.location.hash);
 
 events.on('keydown', 'input.new-todo', (e:KeyboardEvent, t:HTMLInputElement) => {
-  if (e.keyCode === 13 || e.key === 'Enter') {
+  if (e.key === 'Enter') {
     if (t.value && (t.value).trim().length > 0) {
       Todo(store).add(t.value.trim());
       // clear value
@@ -33,7 +37,9 @@ events.on('keydown', 'input.edit', (e:KeyboardEvent, t:HTMLInputElement) => {
     // replace text
     t.value = txt;
     t.blur();
+    return false;
   }
+  return false;
 });
 
 // toggle on editing
@@ -49,6 +55,7 @@ events.on('dblclick', 'li', (e:Event, t:HTMLLIElement) => {
     el.value = '';
     el.value = tmp;
     el.focus();
+    return false;
   }, 1);
 });
 

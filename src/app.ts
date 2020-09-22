@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'src/styles/default.scss';
 import 'src/events/events';
 
@@ -9,7 +10,7 @@ import { csr } from 'src/utils/csr';
 import App from 'src/components/root';
 
 // mustache
-// import { views, getTemplates } from 'drmzn-mustache';
+// import { views, getTemplates } from 'src/utils/mustache';
 // const tpls = require.context('src/mustache', true, /\.html$/);
 // const { templates, container } = getTemplates(tpls);
 
@@ -32,12 +33,10 @@ import App from 'src/components/root';
       (<any>navigator).serviceWorker.addEventListener('message', (event) => {
         console.log(event);
       });
-
     }, (err) => {
       console.log('service worker registration failed: ', err);
     });
   } else {
     console.log('service worker not found');
   }
-
 })();
