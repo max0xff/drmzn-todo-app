@@ -18,8 +18,10 @@ const client = {
   optimization: {
     sideEffects: false,
     minimizer: [new TerserPlugin({
-      cache: true,
-      parallel: true,
+      terserOptions: {
+        cache: true,
+        parallel: true,
+      },
     })],
   },
   name: 'main',
@@ -31,7 +33,6 @@ const client = {
   },
   context: __dirname,
   mode: `${process.env.NODE_ENV}`,
-  node: { fs: 'empty' },
   module: {
     rules: [
       {
@@ -40,7 +41,7 @@ const client = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: process.env.NODE_ENV === 'development',
+              // hmr: process.env.NODE_ENV === 'development',
             },
           },
           'css-loader',
@@ -102,7 +103,7 @@ const client = {
     new MiniCssExtractPlugin({
       filename: `[name].${version}.min.css`,
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    // new webpack.optimize.OccurrenceOrderPlugin(),
     new CopyPlugin({
       patterns: [
         { from: './src/media', to: './' },
@@ -124,7 +125,6 @@ const client = {
 // Server settings
 const server = {
   mode: `${process.env.NODE_ENV}`,
-  node: { fs: 'empty' },
   resolve: {
     extensions: ['.ts', '.tsx'],
     alias: {
@@ -170,7 +170,6 @@ const server = {
 // Service Worker Settings
 const sw = {
   mode: `${process.env.NODE_ENV}`,
-  node: { fs: 'empty' },
   resolve: {
     extensions: ['.ts'],
     alias: {
