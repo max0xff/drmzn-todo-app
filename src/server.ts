@@ -21,7 +21,7 @@ import App from 'src/components/root';
 // const tpls = require.context('src/mustache', true, /\.html$/);
 // const { templates, container } = getTemplates(tpls);
 
-const version = '0.0.8';
+const version = '0.0.9';
 
 const app = express();
 app.use(compression());

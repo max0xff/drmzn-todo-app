@@ -7,11 +7,11 @@ if (workbox) {
   workbox.setConfig({ debug: true });
 
   workbox.precaching.precacheAndRoute([
-    { url: '/main.0.0.8.min.js', revision: '0.0.8' },
-    { url: '/sw.0.0.8.min.js', revision: '0.0.8' },
-    { url: '/index.html', revision: '0.0.8' },
-    { url: '/main.0.0.8.min.css', revision: '0.0.8' },
-    { url: '/favicon.ico', revision: '0.0.8' },
+    { url: '/main.0.0.9.min.js', revision: '0.0.9' },
+    { url: '/sw.0.0.9.min.js', revision: '0.0.9' },
+    { url: '/index.html', revision: '0.0.9' },
+    { url: '/main.0.0.9.min.css', revision: '0.0.9' },
+    { url: '/favicon.ico', revision: '0.0.9' },
   ]);
 
   workbox.routing.registerRoute(

@@ -12,7 +12,7 @@ export namespace init {
   export const reduce = (state, action) => immutable.wrap(state)
     .set('config', {
       build: {
-        version: '0.0.8'
+        version: '0.0.9'
       },
       meta: {
         robots: 'index, follow',
