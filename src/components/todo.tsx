@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import * as React from 'react';
 import { classNames } from 'src/functions/utils';
 import { Todo } from 'src/interfaces';

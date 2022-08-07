@@ -5,7 +5,7 @@
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "target": "es6",
-    "module": "commonjs",
+    "module": "ES6",
     "allowJs": true,
     "jsx": "react",
     "sourceMap": true,
@@ -15,15 +15,6 @@
     ],
     "moduleResolution": "node",
     "noEmit": false
-  },
-    "awesomeTypescriptLoaderOptions": {
-      "useCache": true,
-      "useBabel": false,
-      "isolatedModules": false,
-      "forceIsolatedModules": false,
-      "reportFiles": [
-        "src/**/*.ts"
-      ]
   },
   "strict-boolean-expressions": true,
   "include": [

@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 export const ssr = (placeholder, App) => {
   const render = (store, res) => {
     const currentState = store.getState();
-    const html = renderToString(<Provider store={store}><App /></Provider>);
+    const html = renderToString(<React.StrictMode><Provider store={store}><App /></Provider></React.StrictMode>);
     const preloadedState = jsStringEscape(serialize(currentState, { isJSON: true }));
     const configData = {
       ...currentState.config,

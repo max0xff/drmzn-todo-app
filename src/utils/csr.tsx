@@ -1,14 +1,16 @@
-/* eslint-disable no-undef */
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as debounce from 'lodash.debounce';
 import { Provider } from 'react-redux';
+import { createRoot } from 'react-dom/client';
+
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
 
 // client side render
 export const csr = (store, App) => {
   const render = () => {
     console.time('render');
-    ReactDOM.hydrate(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+    root.render(<React.StrictMode><Provider store={store}><App /></Provider></React.StrictMode>);
     console.timeEnd('render');
   };
   store.subscribe(debounce(render, 0, {

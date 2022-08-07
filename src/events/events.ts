@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-undef */
 import { store } from 'src/utils/store';
 import { getProp } from 'src/functions/utils';
 

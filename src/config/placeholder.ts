@@ -33,8 +33,6 @@ export const placeholder = (data) => {
       <script>
         window.__PRELOADED_STATE__ = '${content.preloadedState}';
       </script>
-      <script defer crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-      <script defer crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
       <script defer type="text/javascript" src="/main.${build.version}.min.js"></script>
     </body>
   </html>`;

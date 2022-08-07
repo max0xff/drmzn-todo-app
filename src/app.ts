@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import 'src/styles/default.scss';
 import 'src/events/events';
 

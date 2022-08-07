@@ -51,7 +51,7 @@ const client = {
       },
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader',
       },
       {
         test: /\.html$/,
@@ -117,8 +117,8 @@ const client = {
     },
   },
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
+    // react: 'React',
+    // 'react-dom': 'ReactDOM',
   },
 };
 
@@ -142,7 +142,7 @@ const server = {
   module: {
     rules: [{
       test: /\.tsx?$/,
-      loader: 'awesome-typescript-loader',
+      loader: 'ts-loader',
     },
     {
       test: /\.html$/,
@@ -186,7 +186,7 @@ const sw = {
   module: {
     rules: [{
       test: /\.tsx?$/,
-      loader: 'awesome-typescript-loader',
+      loader: 'ts-loader',
     }],
   },
 };

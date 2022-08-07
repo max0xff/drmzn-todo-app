@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-shadow */
-/* eslint-disable consistent-return */
-/* eslint-disable no-undef */
 import morphdom from 'morphdom';
 import * as debounce from 'lodash.debounce';
 import * as serialize from 'serialize-javascript';

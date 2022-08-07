@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable react/jsx-boolean-value */
 import * as React from 'react';
 
 const Header = () => {

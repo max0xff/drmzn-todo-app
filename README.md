@@ -28,7 +28,7 @@ The controller is async function, that receives the initialized Store and the pa
 
 ### State
 
-The state is nested object. It has tree like structure and represents the data model of our app. Cannot be mutated and can be updated only with dispatch action by Controller. Redux Store holds our State. The store is initialized on startup and is passed to controllers. Render is subscribed to Store.
+The state is nested object. It has a tree like structure and represents the data model of our app. Cannot be mutated and can be updated only with dispatch action by the controller. Redux Store holds our State. The store is initialized on startup and is passed to controllers. The Render is subscribed to the Store.
 
 ### View
 
@@ -47,9 +47,9 @@ Step 2. Web server receives the request and invokes Controller on Node Express W
 
 Step 3. Controller calls method with parameters, does the work and dispatches an action to the Store. Store generates the Initial State for our app.
 
-Step 4. Render function on server takes the initial state and App to generate the response html via React SSR. Initial state is passed to client-side as global variable via response html as script tag. (hydration)
+Step 4. Render function on the server takes the initial state and App to generate the response html via React SSR. The initial state is passed to client-side as global variable via response html as script tag. (Hydration)
 
-Step 5. Client-side (browser), receives the response from server and renders html on the screen.
+Step 5. Client-side (browser), receives the response from the server and renders html on the screen.
 
 Step 6. Service workers are installing.
 
@@ -57,21 +57,21 @@ Step 7. The app is loaded asynchronously after the Browser has rendered the resp
 
 ##### Part 2: Client side
 
-Step 8. User does a interaction — example — clicks on native link — a href element, the Event System is intercepting the click and invokes the according controller/method with specified parameters.
+Step 8. User does an interaction — example — clicks on native link — a href element, the Event System is intercepting the click and invokes the according controller/method with specified parameters.
 
-Step 9. Controller executes business logic and dispatches an action to store to update the state. Controller can access private methods, functions, Utils, external resources, 3rd party APIs. Controllers are asynchronous and can dispatch multiple actions.
+Step 9. Controller executes business logic and dispatches an action to store to update the state. The controller can access private methods, functions, Utils, external resources, 3rd party APIs. Controllers are asynchronous and can dispatch multiple actions.
 
 Step 10. Store receives dispatch action from controller and updates the state.
 
-Step 11. Render function is subscribed to the Store and when state changes it renders our React app. Render function is de-bounced and renders only once, after the last state change in same stack call.
+Step 11. Render function is subscribed to the Store and when state changes it renders our React app. Render function is de-bounced and renders only once, after the last state change in the same stack call.
 
 Step 12. React applies the diff changes to current DOM Tree and render is complete. Target render time < 16ms.
 
-Step 13. If all PWA criteria are met, the user can install the app on his mobile and desktop devices like native application.
+Step 13. If all PWA criteria are met, the user can install the app on his mobile and desktop devices like a native application.
 
 ##### Part 3: Service Worker
 
-Step 14. Later, the user visits the url of our app with his browser or opens it via the installed app. Service Worker is loading the application shell instantly. Content is loaded, based on specified caching strategy. The application is initialized from client-side.
+Step 14. Later, the user visits the url of our app with his browser or opens it via the installed app. Service Worker is loading the application shell instantly. The content is loaded, based on specified caching strategy. The application is initialized from client-side.
 
 ## Links
 

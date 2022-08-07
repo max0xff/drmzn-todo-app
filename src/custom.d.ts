@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 declare module '*.svg' {
   const content: any;
   export default content;

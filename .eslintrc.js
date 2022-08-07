@@ -26,8 +26,11 @@ module.exports = {
     'padded-blocks': 1,
     'no-unneeded-ternary': 0,
     'object-curly-newline': 0,
+    'padded-blocks': 0,
+    'react/jsx-filename-extension': 0,
   },
   plugins: [
+    'import',
     '@typescript-eslint',
   ],
   extends: [

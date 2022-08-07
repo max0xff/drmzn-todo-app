@@ -11,9 +11,7 @@ if (workbox) {
     { url: '/sw.0.0.8.min.js', revision: '0.0.8' },
     { url: '/index.html', revision: '0.0.8' },
     { url: '/main.0.0.8.min.css', revision: '0.0.8' },
-    { url: 'https://unpkg.com/react@16/umd/react.production.min.js', revision: '0.0.8' },
-    { url: 'https://unpkg.com/react-dom@16/umd/react-dom.production.min.js', revision: '0.0.8' },
-    { url: '/favicon.ico', revision: '0.0.8' }
+    { url: '/favicon.ico', revision: '0.0.8' },
   ]);
 
   workbox.routing.registerRoute(
@@ -23,17 +21,17 @@ if (workbox) {
       plugins: [
         new workbox.expiration.Plugin({
           maxEntries: 200,
-          maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
-        })
-      ]
-    })
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
+    }),
   );
 
   workbox.routing.registerRoute(
     /\.(?:js|css|woff2|woff|ttf|json|xml|ico)$/,
     new workbox.strategies.CacheFirst({
-      cacheName: 'static-resources'
-    })
+      cacheName: 'static-resources',
+    }),
   );
 
 } else {
