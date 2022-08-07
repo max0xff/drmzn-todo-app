@@ -3,7 +3,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const nodeExternals = require('webpack-node-externals');
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const package = require('./package.json');
@@ -17,12 +16,6 @@ const client = {
   },
   optimization: {
     sideEffects: false,
-    minimizer: [new TerserPlugin({
-      terserOptions: {
-        cache: true,
-        parallel: true,
-      },
-    })],
   },
   name: 'main',
   target: 'web',
