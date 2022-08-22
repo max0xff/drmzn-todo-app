@@ -74,9 +74,9 @@ Step 13. If all PWA criteria are met, the user can install the app on his mobile
 Step 14. Later, the user visits the url of our app with his browser or opens it via the installed app. Service Worker is loading the application shell instantly. The content is loaded, based on specified caching strategy. The application is initialized from client-side.
 
 ## Links
-
 - [Robert C Martin - Clean Architecture and Design (video)](https://www.youtube.com/watch?v=Nsjsiz2A9mg)
 - [Lee Byron - Immutable User Interfaces (video)](https://www.youtube.com/watch?v=pLvrZPSzHxo)
+- [David Khourshid - Goodbye, useEffect (video)](https://www.youtube.com/watch?v=HPoC-k7Rxwo)
 - [Robert C Martin - Functional Programming; What? Why? When? (video)](https://www.youtube.com/watch?v=7Zlp9rKHGD4)
 - [John Ousterhout - A Philosophy of Software Design (video)](https://www.youtube.com/watch?v=bmSAYlu0NcY)
 - [Martin Fowler - The Many Meanings of Event-Driven Architecture (video)](https://www.youtube.com/watch?v=STKCRSUsyP0)
